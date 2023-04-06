@@ -1,0 +1,67 @@
+:root {
+    --TitleColour: #ffffff;
+    --InformationColour: #ffffff;
+    --BackgroundColour: rgb(96, 172, 238);
+  }
+.header{
+    background-color: var(--BackgroundColour);
+    width: 100vw;
+    color: var(--TitleColour);
+    padding-top: 5vh;
+}
+
+h1{
+    background-color: var(--BackgroundColour);
+    color: var(--TitleColour);
+    font-size: 50px;
+    font-weight: bold;
+}
+
+h2{
+    color: var(--TitleColour);
+    font-size: 20px;
+    padding-bottom: 5vh;
+}
+
+.information{
+    background-color: rgb(155, 196, 233);
+    color: var(--InformationColour);
+    font-family: rial, Helvetica, sans-serif;
+    width: 55vw;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-div{
+    padding: 1vw;
+
+    
+}
+
+.btn-decor{
+    background-color: rgb(153, 204, 255);
+    color: darkblue;
+    height: 5vw;
+    width: 8vw;
+
+}
+
+.title{
+    background-color: white;
+    color: black;
+
+}
+
+.boxed{
+    border:1px solid darkslateblue;
+    border-width: 5px;
+    padding: 60px;
+    border-radius: 10px;
+    border-image: linear-gradient(to right, darkslateblue, lightblue) 30;
+
+
+}
