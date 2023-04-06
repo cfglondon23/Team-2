@@ -6,6 +6,7 @@ import Reccomendations from './DashboardComponents/Reccomendations';
 import ReccomendationsHeader from './DashboardComponents/ReccomendationsHeader';
 import Navbar from './Navbar'
 import AvailableClubs from './LandingPageComponents/AvailableClubs';
+import Adverts from './LandingPageComponents/Adverts';
 
 export default function Dashboard() {
 
@@ -33,7 +34,8 @@ export default function Dashboard() {
         
         <ReccomendationsHeader/>
         <AvailableClubs/>
-      
+
+        <Adverts/>
  
 
 

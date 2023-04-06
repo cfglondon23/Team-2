@@ -1,10 +1,15 @@
 
 import React, { useState } from 'react';
 import "../Styling/Browse.css";
-import {Container, Button, Row, Col} from 'react-bootstrap';
+import {Container, Button, Row, Col, Spinner, ListGroupItem, Card} from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import Navbar from './Navbar';
+import {Link, useNavigate} from 'react-router-dom'
+import Adverts from './LandingPageComponents/AvailableClubs';
 export default function Browse() {
+
+  const [loading, setLoading] = useState(false)
+  const navigate = useNavigate();
 
   const [clubs, setClubs] = useState([
     {
@@ -13,7 +18,8 @@ export default function Browse() {
         "location": "Lewisham",
         "tags": "Coding, Maths, Lewisham",
         "age_range": "Primary",
-        "contact_person": "Nandini"
+        "contact_person": "Nandini",
+        "id":0
     },
     {
         "name": "Croydon Coders",
@@ -21,7 +27,8 @@ export default function Browse() {
         "location": "Croydon",
         "tags": "CS, Math, South London, Croydon",
         "age_range": "Secondary",
-        "contact_person": "Miranda"
+        "contact_person": "Miranda",
+        "id":1
     },
     {
         "name": "Dagenham Debuggers",
@@ -29,17 +36,22 @@ export default function Browse() {
         "location": "Dagenham",
         "tags": "CS, Math, East London",
         "age_range": "Primary",
-        "contact_person": "Fabian"
+        "contact_person": "Fabian",
+        "id":2
     },
     {
         "name": "Hammersmith Hackers",
         "description": "Learn hacking in West London",
         "location": "West London",
         "tags": "CS, Math, West London",
-        "age_range": "Primary, Secondary",
-        "contact_person": "Ishab"
+        "age_range": "Secondary",
+        "contact_person": "Ishab",
+        "id":3
+
     }
 ]);
+
+  const [validClubs, setValidClubs] = useState([]);
 
   const [ageGroup, setAgeGroup] = useState("Primary"); // [primary, secondary, sixthForm]
   const [tags, setTags] = useState(""); // Maths, Reading, Sports, Coding, Science, Arts, Drama, Music, 
@@ -48,15 +60,22 @@ export default function Browse() {
   {
     setAgeGroup(e.target.value)
     console.log(e.target.value)
+
+  }
+
+  function handleClick(clubID)
+  {
+    console.log(clubID)
+    navigate("/club?id="+clubID)
   }
 
   const handleSearch = e =>
   {
     e.preventDefault();
-    let searchQuery = {
-      ageGroup: ageGroup,
-      clubs: clubs
-    }
+    console.log(ageGroup)
+    let valid = clubs.filter(club => club.age_range === ageGroup)
+    console.log(valid)
+    setValidClubs(valid)
   }
 
   return (
@@ -71,8 +90,30 @@ export default function Browse() {
                 <Col >
                 <h1 id="title">Extra-Curriculars and Other Events</h1>
                 <h2 id="">Start Learning and Engaging Now! Use the filters or search bar to see specific events.</h2>
-                
-                <h3 id=""> Age Range: </h3>
+               
+
+                  
+
+                </Col>
+            </Row>
+
+            <Row>
+
+            </Row>
+
+
+        </Container>
+          
+            
+          
+
+
+
+        </div>      
+        <div>
+        <Container>
+
+        <h3 id=""> Age Range: </h3>
                 <Form.Check
                     inline
                     label="Primary School"
@@ -101,21 +142,146 @@ export default function Browse() {
                     onClick={handleAgeRangeChange}
                   />
 
-                  
+<h3 id=""> Topic: </h3>
+                <Form.Check
+                    inline
+                    label="Coding"
+                    name="TopicRadios"
+                    type={'checkbox'}
+                    value={`Coding`}
+                    defaultChecked
+                  />
+    
+                <Form.Check
+                    inline
+                    label="Environmental"
+                    name="TopicRadios"
+                    type={'checkbox'}
+                    value={`Environmental`}
+                  />
 
-                </Col>
-            </Row>
+                <Form.Check
+                    inline
+                    label="Drama"
+                    name="TopicRadios"
+                    type={'checkbox'}
+                    value={`Drama`}
+                  />
+                <Form.Check
+                    inline
+                    label="Reading"
+                    name="TopicRadios"
+                    type={'checkbox'}
+                    value={`Reading`}
+                  />
+                <Form.Check
+                    inline
+                    label="Football"
+                    name="TopicRadios"
+                    type={'checkbox'}
+                    value={`Football`}
+                  />
+                <Form.Check
+                    inline
+                    label="Arts"
+                    name="TopicRadios"
+                    type={'checkbox'}
+                    value={`Arts`}
+                  />
+                  <Form.Check
+                    inline
+                    label="Music"
+                    name="TopicRadios"
+                    type={'checkbox'}
+                    value={`Music`}
+                  />
+                  <Form.Check
+                    inline
+                    label="Dance"
+                    name="TopicRadios"
+                    type={'checkbox'}
+                    value={`Dance`}
+                  />
+                  <Form.Check
+                    inline
+                    label="Sports"
+                    name="TopicRadios"
+                    type={'checkbox'}
+                    value={`Sports`}
+                  />
+
+<h3 id=""> Location: </h3>
+<div class="form-group">
+  <label for="usr">Postcode:</label>
+  <input type="text" class="form-control" id="area" width = "20px"/ >
+</div>
+
+        <Button variant="primary" onClick = {handleSearch}>Search</Button>
 
 
-        </Container>
-          
+        <div class="titleText">Clubs Recommended based on your preferences: </div>
+        {loading ? (<Spinner/>):(
             
           
+            
+            <Row>
+              {validClubs.map((club, index) => {
+                return (
+
+                  <>
+                    <Col md={4} lg={4} sm={4} xs={12} key={index}>
+                        <div class="CardContainer">
+                  
+                        
+
+  
+                        <Card onClick = {() => handleClick(club.id)}>
+
+                        <Card.Header>{club.name} </Card.Header>
+
+                                <Card.Body>
+
+
+                                    <ListGroupItem>
+                                        {club.description}
+                                    </ListGroupItem>
+
+                                    <ListGroupItem>
+                                        {club.contact_person}
+                                    </ListGroupItem>
+                                
 
 
 
-        </div>      
-        
+
+                                  </Card.Body>
+                      
+                                <Card.Footer>
+                                {
+                                    club.tags.split(',').map((tag) => {
+                                        return (
+                                            <>#{tag.replace(' ','')} </>)
+                                    })
+                                }
+                                </Card.Footer>
+
+                                
+                            </Card>
+                     
+
+                        </div>
+              
+                    </Col>
+
+                    </>
+                );
+              })}
+            </Row>
+            
+              
+        )}
+    </Container>
+    </div>
         
 
     </>  
