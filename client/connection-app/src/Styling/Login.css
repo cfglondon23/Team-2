@@ -1,0 +1,21 @@
+.loginContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+h3{
+    font-size: large;
+    
+
+}
+
+.btn-decor{
+    background-color: rgb(153, 204, 255);
+    color: darkblue;
+    height: 3vw;
+    width: 100%;
+    
+
+}

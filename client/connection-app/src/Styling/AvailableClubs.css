@@ -1,0 +1,27 @@
+:root {
+    --TitleColour: #000000;
+  }
+
+.CardContainer{
+    margin-top : 5vh;
+    margin-bottom : 5vh;
+    border-image: linear-gradient(to right, darkslateblue, lightblue) 30;
+    
+}
+
+.CardContainer:hover{
+  color: darkblue;
+}
+
+.titleText{
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Trebuchet MS";
+  padding: 50px;
+  color: darkcyan;
+  
+
+}
+
+
