@@ -5,5 +5,5 @@ from .models import Club
 class ClubSerializer(serializers.ModelSerializer):
     class Meta:
         model = Club
-        fields = ('name', 'description', 'location',
+        fields = ('id', 'name', 'description', 'location',
                   'tags', 'age_range', 'contact_person', 'likes')

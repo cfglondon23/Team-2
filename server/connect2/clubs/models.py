@@ -1,7 +1,8 @@
+from students.models import Student
 from django.db import models
 
-# Create your models here.
 class Club(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
     description = models.CharField(max_length=500)
     location = models.CharField(max_length=200, default="")

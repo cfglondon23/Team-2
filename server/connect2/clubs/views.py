@@ -2,9 +2,14 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
+from django.http import HttpResponse
 
 from .models import Club
 from .serializer import ClubSerializer
+
+import sys
+sys.path.append('../')
+from students.models import Student
 
 
 @api_view(['GET'])
@@ -34,8 +39,8 @@ def club_create(request):
 
 
 @api_view(['PUT'])
-def club_update(request, pk):
-    club = Club.objects.get(id=pk)
+def club_update(request):
+    club = Club.objects.get(name=request.data['name'])
     serializer = ClubSerializer(instance=club, data=request.data)
     if serializer.is_valid():
         serializer.save()
@@ -47,11 +52,3 @@ def club_delete(request, pk):
     club = Club.objects.get(id=pk)
     club.delete()
     return Response('Item succsesfully delete!')
-
-
-@api_view(['UPDATE'])
-def club_like(request, pk):
-    club = Club.objects.get(id=pk)
-    club.likes = club.likes + 1
-    club.save()
-    return Response('Successfully liked!')

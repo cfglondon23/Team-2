@@ -8,5 +8,4 @@ urlpatterns = [
     path('post/', views.club_create),
     path("put/", views.club_update),
     path("delete/", views.club_delete),
-    path("like/", views.club_like),
 ]

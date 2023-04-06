@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'clubs',
     'students',
+    'studentclublikes',
     'rest_framework',
     'corsheaders',
 ]
