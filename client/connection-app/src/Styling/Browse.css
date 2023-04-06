@@ -18,4 +18,11 @@ h2{
 }
 h3{
     font-size: 20px;
+    padding-top: 5vh;
+}
+
+.CardContainer:hover{
+    box-shadow: 10px 5px 5px teal;
+    cursor: pointer;
+
 }

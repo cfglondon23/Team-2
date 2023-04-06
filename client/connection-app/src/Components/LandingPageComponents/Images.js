@@ -16,7 +16,7 @@ export default function Images() {
           <img src="" class="rounded float-left"/>
           </Card>
           <Card>
-          <img src="https://elements-cover-images-0.imgix.net/3a620009-9ea9-4c6f-9d1d-16f79cbdc039?auto=compress%2Cformat&fit=max&w=2038&s=29024fa54250472d2707d38b06e1485e" class="rounded float-left"/>
+          <img src="https://previews.123rf.com/images/photoplotnikov/photoplotnikov1804/photoplotnikov180400001/98534076-ecology-concept-with-green-eco-earth-and-trees-cartoon-earth-planet-globe-with-environment-elements.jpg" class="rounded float-left"/>
           </Card>
           <Card>
           <img src="" class="rounded float-left"/>
@@ -32,10 +32,10 @@ export default function Images() {
           <img src="https://www.danceworksdevon.com/wp-content/uploads/2018/12/26000116-theater-stage-with-red-curtain-and-masks-illustration.jpg" class="rounded float-left"/>
           </Card>
           <Card>
-          <img src="https://elements-cover-images-0.imgix.net/3a620009-9ea9-4c6f-9d1d-16f79cbdc039?auto=compress%2Cformat&fit=max&w=2038&s=29024fa54250472d2707d38b06e1485e" class="rounded float-left"/>
+          <img src="" class="rounded float-left"/>
           </Card>
           <Card>
-          <img src="https://www.helpguide.org/wp-content/uploads/2023/02/Cooking-for-One.jpeg" class="rounded float-left"/>
+          <img src="https://img.freepik.com/free-vector/hand-drawn-table-football-illustration_23-2149441340.jpg?w=1380&t=st=1680801897~exp=1680802497~hmac=0b2e91fdf140edfc0465d01555dea64a95c2183d2d8a688e08da058fb969bb0e" class="rounded float-left"/>
           </Card>
         </CardGroup>
             

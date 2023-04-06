@@ -30,7 +30,7 @@ export default function Template() {
                     
                     <>
                     <Row>
-                        {availableClubs.map((club, index) => {
+                        {availableClubs.slice(0, 3).map((club, index) => {
                         return (
                             <Col md={4} lg={4} sm={4} xs={12} key={index}>
                                 <div class="CardContainer">
