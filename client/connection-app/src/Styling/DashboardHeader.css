@@ -1,0 +1,45 @@
+:root {
+    --TitleColour: #ffffff;
+    --InformationColour: #ffffff;
+    --BackgroundColour: rgb(96, 172, 238);
+  }
+.header{
+    background-color: var(--BackgroundColour);
+    width: 100vw;
+    color: var(--TitleColour);
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+h1{
+    background-color: var(--BackgroundColour);
+    color: var(--TitleColour);
+    width: 50vw;
+    font-size: 50px;
+    font-weight: bold;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+h2{
+    background-color: var(--BackgroundColour);
+    color: var(--TitleColour);
+    width: 50vw;
+    font-size: 20px;
+}
+
+h4{
+    background-color: var(--BackgroundColour);
+    color: var(--TitleColour);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 10vh;
+}
+
+h5{
+    background-color: var(--BackgroundColour);
+    color: var(--TitleColour);
+    font-size: 20px;
+    text-align: center;
+}
