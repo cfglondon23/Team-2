@@ -33,5 +33,5 @@ def valid_login_details(request):
     try:
         student = Student.objects.get(email=email, password=password)
         return HttpResponse(status=200)
-    except students.models.Student.DoesNotExist:
+    except:
         return HttpResponse(status=400)

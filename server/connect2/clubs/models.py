@@ -8,3 +8,4 @@ class Club(models.Model):
     tags = models.CharField(max_length=200, default="")
     age_range = models.CharField(max_length=200, default="")
     contact_person = models.CharField(max_length=200, default="")
+    likes = models.IntegerField(default=0)

@@ -47,3 +47,11 @@ def club_delete(request, pk):
     club = Club.objects.get(id=pk)
     club.delete()
     return Response('Item succsesfully delete!')
+
+
+@api_view(['UPDATE'])
+def club_like(request, pk):
+    club = Club.objects.get(id=pk)
+    club.likes = club.likes + 1
+    club.save()
+    return Response('Successfully liked!')
