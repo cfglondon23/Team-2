@@ -8,7 +8,7 @@ from .serializer import ClubSerializer
 
 
 @api_view(['GET'])
-def apiOverview(request):
+def api_overview(request):
     api_urls = {
         'Get': '/get/',
         'Post': '/club-create/',
